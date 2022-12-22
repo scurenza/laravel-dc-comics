@@ -39,6 +39,20 @@
                                     Guarda
                                 </a>
                             </td>
+                            <td>
+                                <a href="{{ route('comics.edit', $comic->id) }}" class="btn btn-warning">
+                                    Modifica
+                                </a>
+                            </td>
+                            <td>
+                                <form action="{{ route('comics.destroy', $comic->id) }}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button class="btn btn-danger">
+                                        Cancella
+                                    </button>
+                                </form>
+                            </td>
                         </tr>
                     @endforeach
                 </tbody>
